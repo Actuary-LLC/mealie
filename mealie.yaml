@@ -51,5 +51,5 @@ services:
                #Widget
         - "homepage.widget.type=mealie"
         - "homepage.widget.url=http://192.168.2.3:9925"
-        - "homepage.widget.key=${MEALIE_HOMEPAGE_API_TOKEN}"
+        - "homepage.widget.key=${MEALIE_HOMEPAGE_API_KEY}"
         - "homepage.widget.version=2"
