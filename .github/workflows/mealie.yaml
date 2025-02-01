@@ -28,4 +28,4 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
       - name: deploy stack
-      - run: docker stack deploy -c mealie.yaml mealie
+        run: docker stack deploy -c mealie.yaml mealie
