@@ -24,6 +24,7 @@ jobs:
       OIDC_CLIENT_ID: ${{ vars.OIDC_CLIENT_ID }}
       #Repository Secrets
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      MEALIE_HOMEPAGE_API_KEY: ${{ secrets.MEALIE_HOMEPAGE_API_KEY }}
       OIDC_CLIENT_SECRET: ${{ secrets.OIDC_CLIENT_SECRET }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
