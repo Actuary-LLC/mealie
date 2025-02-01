@@ -48,7 +48,16 @@ services:
         - "traefik.http.services.mealie.loadbalancer.server.port=9000"
         - "traefik.http.routers.mealie.middlewares=authentik@file"
         #homepage labels
-               #Widget
+          #service
+        #Service
+        - "homepage.group=Productivity"
+        - "homepage.name=Mealie"
+        - "homepage.description=Recipes"
+        - "homepage.icon=mealie.png"
+        - "homepage.server=my-docker"
+        - "homepage.container=mealie_main"
+        - "homepage.href=http://192.168.2.3:9925"
+          #Widget
         - "homepage.widget.type=mealie"
         - "homepage.widget.url=http://192.168.2.3:9925"
         - "homepage.widget.key=${MEALIE_HOMEPAGE_API_KEY}"
