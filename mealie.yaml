@@ -9,6 +9,8 @@ services:
     image: ghcr.io/mealie-recipes/mealie:v2.5.0
     volumes:
       - /mnt/user/docker/volumes/mealie/data:/app/data
+    ports:
+      - 9925:9000
     environment:
       ALLOW_SIGNUP: "false"
       PUID: 99
@@ -48,6 +50,6 @@ services:
         #homepage labels
                #Widget
         - "homepage.widget.type=mealie"
-        - "homepage.widget.url=https://mealie.actuary.dev"
+        - "homepage.widget.url=http://192.168.2.3:9925"
         - "homepage.widget.key=${MEALIE_HOMEPAGE_API_TOKEN}"
         - "homepage.widget.version=2"
