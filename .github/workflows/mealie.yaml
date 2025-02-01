@@ -1,0 +1,31 @@
+name: 'mealie'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  checkout-repository:
+    runs-on: [coral]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: 'Actuary-LLC/mealie'
+          ref: 'main'       
+  redeploy-service:
+    needs: checkout-repository
+    runs-on: [self-hosted]
+    env:
+      #Repository Variables
+      POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+      POSTGRES_PORT: ${{ vars.POSTGRES_PORT }}
+      OIDC_CLIENT_ID: ${{ vars.OIDC_CLIENT_ID }}
+      #Repository Secrets
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      OIDC_CLIENT_SECRET: ${{ secrets.OIDC_CLIENT_SECRET }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - name: deploy stack
+      - run: docker stack deploy -c mealie.yaml mealie
