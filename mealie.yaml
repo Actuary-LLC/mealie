@@ -45,3 +45,9 @@ services:
         - "traefik.http.routers.mealie.tls.certresolver=myresolver"
         - "traefik.http.services.mealie.loadbalancer.server.port=9000"
         - "traefik.http.routers.mealie.middlewares=authentik@file"
+        #homepage labels
+               #Widget
+        - "homepage.widget.type=mealie"
+        - "homepage.widget.url=https://mealie.actuary.dev"
+        - "homepage.widget.key=${MEALIE_HOMEPAGE_API_TOKEN}"
+        - "homepage.widget.version=2"
