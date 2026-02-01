@@ -6,7 +6,7 @@ networks:
 
 services:
   main:
-    image: ghcr.io/mealie-recipes/mealie:v2.5.0
+    image: ghcr.io/mealie-recipes/mealie:v3.9.2
     volumes:
       - /mnt/user/docker/volumes/mealie/data:/app/data
     ports:
