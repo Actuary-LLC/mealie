@@ -47,7 +47,7 @@ services:
         - "traefik.http.routers.mealie.service=mealie"
         - "traefik.http.routers.mealie.tls.certresolver=myresolver"
         - "traefik.http.services.mealie.loadbalancer.server.port=9000"
-        - "traefik.http.routers.mealie.middlewares=authentik@file"
+        #- "traefik.http.routers.mealie.middlewares=authentik@file"
         #homepage labels
           #service
         #Service
