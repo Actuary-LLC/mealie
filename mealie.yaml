@@ -18,6 +18,7 @@ services:
       PGID: 100
       TZ: America/Chicago
       BASE_URL: https://mealie.actuary.dev
+      ALLOW_PUBLIC: "false"
       # Database Settings
       DB_ENGINE: postgres
       POSTGRES_USER: ${POSTGRES_USER}
