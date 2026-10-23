@@ -39,7 +39,7 @@ services:
       #Reverse Proxy Auth settings
       REVERSE_PROXY_AUTH_ENABLED: "true"
       REVERSE_PROXY_AUTH_HEADER: X-authentik-username
-      REVERSE_PROXY_AUTH_SIGNUP_ENABLED: "false"
+      REVERSE_PROXY_AUTH_SIGNUP_ENABLED: "true"
       REVERSE_PROXY_AUTH_SECRET: ${REVERSE_PROXY_AUTH_SECRET}
       REVERSE_PROXY_AUTH_SECRET_HEADER: X-Mealie-Reverse-Proxy-Secret
       #OPENAI Settings
