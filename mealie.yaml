@@ -56,7 +56,7 @@ services:
         - "traefik.http.services.mealie.loadbalancer.server.port=9000"
         - "traefik.http.routers.mealie.middlewares=authentik@file,mealie-rp-secret,mealie-root-login"
         - "traefik.http.middlewares.mealie-rp-secret.headers.customrequestheaders.X-Mealie-Reverse-Proxy-Secret=${REVERSE_PROXY_AUTH_SECRET}"
-        - "traefik.http.middlewares.mealie-root-login.redirectregex.regex=^https?://[^/]+/?$"
+        - "traefik.http.middlewares.mealie-root-login.redirectregex.regex=^https?://[^/]+/?$$"
         - "traefik.http.middlewares.mealie-root-login.redirectregex.replacement=https://mealie.actuary.dev/login"
         - "traefik.http.middlewares.mealie-root-login.redirectregex.permanent=false"
         #homepage labels
