@@ -29,5 +29,10 @@ jobs:
       REVERSE_PROXY_AUTH_SECRET: ${{ secrets.REVERSE_PROXY_AUTH_SECRET }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: 'Actuary-LLC/mealie'
+          ref: 'main'
       - name: deploy stack
         run: docker stack deploy -c mealie.yaml mealie
