@@ -54,7 +54,8 @@ services:
         - "traefik.http.routers.mealie.service=mealie"
         - "traefik.http.routers.mealie.tls.certresolver=myresolver"
         - "traefik.http.services.mealie.loadbalancer.server.port=9000"
-        #- "traefik.http.routers.mealie.middlewares=authentik@file"
+        - "traefik.http.routers.mealie.middlewares=authentik@file,mealie-rp-secret"
+        - "traefik.http.middlewares.mealie-rp-secret.headers.customrequestheaders.X-Mealie-Reverse-Proxy-Secret=${REVERSE_PROXY_AUTH_SECRET}"
         #homepage labels
           #service
         #Service
